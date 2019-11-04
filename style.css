@@ -1,23 +1,36 @@
 * {
-    
     box-sizing: border-box;
 }
 
 body {
-    font-family: "Nunito", sans-serif;
+    margin: 0;
+    font-family: 'Staatliches', cursive;
+    background: url(tokyo.jpeg);
+    color: whitesmoke;
+    height: auto;
+    width: auto;
+
+}
+
+.title {
+    font-family: 'Staatliches', cursive;
+    font-size: 66px;
+    padding-left: 45px;
 }
 
 .input {
-    text-align: center;
-    margin: 100px;
+   
+    margin: auto;
+    margin-left: 50px;
+
 }
 
 input[type="text"]{
     height: 50px;
-    width: 600px;
+    width: 400px;
     background: #e7e7e7;
-    font-family: "Nunito", sans-serif;
-    font-weight: bold;
+    font-family: 'Staatliches', cursive;
+    
     font-size: 20px;
     border: none;
     border-radius: 2px;
@@ -26,10 +39,10 @@ input[type="text"]{
 
 input[type="submit"]{
     height: 50px;
-    width: 100px;
+    width: 80px;
     background: #e7e7e7;
-    font-family: "Nunito", sans-serif;
-    font-weight: bold;
+    font-family: 'Staatliches', cursive;
+    
     font-size: 20px;
     border: none;
     border-radius: 2px;
@@ -37,23 +50,29 @@ input[type="submit"]{
 
 input[type="clear"]{
     height: 50px;
-    width: 100px;
+    width: 80px;
     background: #e7e7e7;
-    font-family: "Nunito", sans-serif;
-    font-weight: bold;
+    font-family: 'Staatliches', cursive;
+    
     font-size: 20px;
     border: none;
     border-radius: 2px;
 }
 
-.display ul li {
-    list-style: square;
+.numberList {
+    font-size: 25px;
+    padding-left: 65px;
 }
 
 
 #map {
-    width: 50%;
-    height: 400px;
+    display: flexbox;
+    position: relative;
+    margin: auto;
+    top: 150px;
+    width: 40%;
+    height: 550px;
     background-color: gray;
+
 }
 
