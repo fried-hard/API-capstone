@@ -8,3 +8,4 @@ This capstone features the API's from Foursquare and Google Maps. A user can sea
 
 
 Technologies used: HTML,CSS, and Vanilla Javascript.
+Live link: https://fried-hard.github.io/travel-lite/
