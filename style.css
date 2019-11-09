@@ -67,22 +67,48 @@ input[type="clear"] {
   transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
 }
 
-#map {
-  margin: auto;
-
-  width: 20%;
-  height: 1000px;
-  background-color: gray;
-  opacity: 1;
+@media screen and (max-width: 500px) {
+  #map {
+    margin: auto;
+    font-family: "Staatliches", cursive;
+    height: 500px;
+    width: 85%;
+    background: url(tokyo.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 1024px) {
+  body {
+    margin: auto;
+    font-family: "Staatliches", cursive;
+    font-size: 10px;
+    height: 100%;
+    background: url(tokyo.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #map {
+    margin: auto;
+    font-family: "Staatliches", cursive;
+    height: 500px;
+    width: 85%;
+    background: url(tokyo.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+@media screen and (max-width: 1024px) {
   input[type="text"] {
     height: 50px;
     width: 300px;
     background: #e7e7e7;
     font-family: "Staatliches", cursive;
-
     font-size: 20px;
     border: none;
     border-radius: 2px;
@@ -90,11 +116,35 @@ input[type="clear"] {
   }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (min-width: 1024px) {
   #map {
     margin: auto;
     font-family: "Staatliches", cursive;
-    height: 400px;
+    height: 500px;
+    width: 85%;
+    background: url(tokyo.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    margin: auto;
+    font-family: "Staatliches", cursive;
+    font-size: 20px;
+    height: 100%;
+    background: url(tokyo.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #map {
+    margin: auto;
+    font-family: "Staatliches", cursive;
+    height: 600px;
     width: 50%;
     background: url(tokyo.jpeg);
     background-size: cover;
@@ -102,68 +152,11 @@ input[type="clear"] {
   }
 }
 
-@media screen and (max-width: 500px) {
-  body {
-    margin: 0;
-    font-family: "Staatliches", cursive;
-    height: 100%;
-    background: url(tokyo.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  #map {
-    margin: auto;
-    font-family: "Staatliches", cursive;
-    height: 400px;
-    width: 80%;
-    background: url(tokyo.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-  }
-}
-
-@media screen and (min-width: 501px) {
-  #map {
-    margin: auto;
-    font-family: "Staatliches", cursive;
-    height: 550px;
-    width: 60%;
-    background: url(tokyo.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-  }
-}
-
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 1025px) {
   body {
     margin: auto;
     font-family: "Staatliches", cursive;
-    height: 100%;
-    background: url(tokyo.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-  }
-}
-
-@media screen and (min-width: 2100px) {
-  #map {
-    margin: auto;
-    font-family: "Staatliches", cursive;
-    height: 550px;
-    width: 45%;
-    background: url(tokyo.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-  }
-}
-
-@media screen and (min-width: 2100px) {
-  body {
-    margin: auto;
-    font-family: "Staatliches", cursive;
+    font-size: 20px;
     height: 100%;
     background: url(tokyo.jpeg);
     background-size: cover;
