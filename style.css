@@ -104,10 +104,10 @@ input[type="clear"] {
 @media screen and (max-width: 1024px) {
   input[type="text"] {
     height: 50px;
-    width: 270px;
+    width: 290px;
     background: #e7e7e7;
     font-family: "Staatliches", cursive;
-    font-size: 20px;
+    font-size: 15px;
     border: none;
     border-radius: 2px;
     padding: 10px 10px;
