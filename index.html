@@ -13,20 +13,25 @@
     />
   </head>
   <body>
-    <h1 class="title">GET LOST. TRAVEL LITE</h1>
-    <p class="title2">Take a quick gander of what's good.</p>
-    <div class="input">
-      <input type="text" class="inputValue" placeholder="Enter a City" />
-      <input type="submit" value="GO" class="submitButton" />
-      <input type="submit" value="Clear" class="clearButton" />
-    </div>
+    <header>
+      <h1 class="title">GET LOST. TRAVEL LITE</h1>
+      <p class="title2">Take a quick gander of what's good.</p>
+    </header>
 
-    <div class="display" id="myForm">
-      <ol class="numberList" id="numberList"></ol>
-    </div>
+    <form>
+      <div class="input">
+        <input type="text" class="inputValue" placeholder="Enter a City" />
+        <input type="submit" value="GO" class="submitButton" />
+        <input type="submit" value="Clear" class="clearButton" />
+      </div>
+    </form>
+    <section class="results">
+      <div class="display" id="myForm">
+        <ol class="numberList" id="numberList"></ol>
+      </div>
 
-    <div id="map"></div>
-
+      <div id="map"></div>
+    </section>
     <script src="script.js"></script>
     <script
       async
@@ -35,8 +40,5 @@
     ></script>
   </body>
 </html>
-
-
-
 
 
