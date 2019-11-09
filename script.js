@@ -1,11 +1,13 @@
-var submitButton = document.querySelector(".submitButton");
-var clearButton = document.querySelector(".clearButton");
-var inputValue = document.querySelector(".inputValue");
-var numberList = document.querySelector(".numberList");
-var listContainer = document.querySelector(".display");
-var placeHolder = document.getElementsByClassName("inputValue");
+let submitButton = document.querySelector(".submitButton");
+let clearButton = document.querySelector(".clearButton");
+let inputValue = document.querySelector(".inputValue");
+let numberList = document.querySelector(".numberList");
+let listContainer = document.querySelector(".display");
+let enableEnterKey = inputValue.addEventListener("keyup", submitFormEnter);
+let onClick = submitButton.addEventListener("click", getVenueList);
+let requiredValue = inputValue.addEventListener("keyup", inputReq);
 
-//initialize google map.
+//Initialize Google map.
 var map;
 document.getElementById("map").style.display = "none";
 
@@ -97,35 +99,35 @@ function initMap() {
   });
 }
 
-//enable Enter key on submit form.
-inputValue.addEventListener("keyup", function(event) {
+function inputReq(requiredValue) {
+  if (inputValue.value !== "") {
+    submitButton.disabled = false;
+  } else submitButton.disabled = true;
+}
+
+
+function submitFormEnter(enableEnterKey) {
   event.preventDefault();
   if (event.keyCode === 13) {
     event.preventDefault();
     document.getElementById("map").style.display = "flex";
-    submitButton.click();
   }
-});
+}
 
-//event listener for submit button.
-submitButton.addEventListener("click", function() {
-  //Empties previous results.
+function getVenueList(onClick) {
+  event.preventDefault();
   submitButton.disabled = false;
   numberList.innerHTML = "";
-  initMap();
+  document.getElementById("map").style.display = "flex";
 
-  //GET api.
   fetch(
-    "https://api.foursquare.com/v2/venues/explore?client_id=CD0UGW5VRHOLK2JGTB0DLKOUKJNUPT4EPWVU1HNBZZ0MQCF2&client_secret=ZSOS1UZWPVIQVWRGIFK32GZW4YO2Y1OYRFXNUEIPWKP4QF33&v=20191012&near=" +
-      inputValue.value +
-      "&section=toppicks"
+    `https://api.foursquare.com/v2/venues/explore?client_id=CD0UGW5VRHOLK2JGTB0DLKOUKJNUPT4EPWVU1HNBZZ0MQCF2&client_secret=ZSOS1UZWPVIQVWRGIFK32GZW4YO2Y1OYRFXNUEIPWKP4QF33&v=20191012&near=${inputValue.value}&section=toppicks`
   )
     .then(response => response.json())
     .then(data => {
       //narrows down to the items needed in the json reponse data.
-      var venues = data.response.groups[0].items;
-      
-      //function that loops through to display results.
+      let venues = data.response.groups[0].items;
+
       function thisList(venues) {
         //listContainer.appendChild(numberList)
         for (let i = 0; i < venues.length; i++) {
@@ -138,11 +140,10 @@ submitButton.addEventListener("click", function() {
           listItem = document.createElement("li");
           listItem.innerHTML = completeList;
           numberList.appendChild(listItem);
-          
-          //using the iterator to number the markers on the map.
+
           let orderNum = i + 1;
           let orderNumtoString = orderNum.toString();
-          
+          console.log(orderNumtoString);
 
           //initializes the markers on the map and zooms in on the results.
           let marker = new google.maps.Marker({
@@ -159,14 +160,15 @@ submitButton.addEventListener("click", function() {
       thisList(venues);
     })
 
-    .catch(err => alert("Cannot find"));
+    .catch(err => alert("Cannot Find"));
 
-  //removes any previous results and reenables the submission form.
-  clearButton.addEventListener("click", function() {
+  clearButton.addEventListener("click", clearPage);
+  function clearPage() {
     numberList.innerHTML = "";
     inputValue.value = "";
     submitButton.disabled = false;
     document.getElementById("map").style.display = "none";
     initMap();
-  });
-});
+  }
+}
+inputReq(requiredValue);
