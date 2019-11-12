@@ -111,6 +111,7 @@ function submitFormEnter(enableEnterKey) {
   if (event.keyCode === 13) {
     event.preventDefault();
     document.getElementById("map").style.display = "flex";
+    initMap();
   }
 }
 
@@ -119,6 +120,7 @@ function getVenueList(onClick) {
   submitButton.disabled = false;
   numberList.innerHTML = "";
   document.getElementById("map").style.display = "flex";
+  initMap();
 
   fetch(
     `https://api.foursquare.com/v2/venues/explore?client_id=CD0UGW5VRHOLK2JGTB0DLKOUKJNUPT4EPWVU1HNBZZ0MQCF2&client_secret=ZSOS1UZWPVIQVWRGIFK32GZW4YO2Y1OYRFXNUEIPWKP4QF33&v=20191012&near=${inputValue.value}&section=toppicks`
