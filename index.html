@@ -15,21 +15,25 @@
   <body>
     <header>
       <h1 class="title">GET LOST. TRAVEL LITE</h1>
-      <p class="title2">Take a quick gander of what's good.</p>
+      <h2 class="title2">Take a quick gander of what's good.</h2>
     </header>
 
     <form>
       <div class="input">
-        <input type="text" class="inputValue" placeholder="Enter a City" />
-        <input type="submit" value="GO" class="submitButton" />
-        <input type="submit" value="Clear" class="clearButton" />
+        <label for="search" class="visuallyhidden">Search:</label>
+        <input type="text" class="inputValue" placeholder="Enter a City" id="citySearch" />
+        <label for="submitButton" class="visuallyhidden">Submit</label>
+        <input type="submit" value="GO" class="submitButton" id="submitButton" />
+        <label for="clearButton" class="visuallyhidden">Clear</label>
+        <input type="submit" value="Clear" class="clearButton" id="clearButton"  />
       </div>
     </form>
     <section class="results">
       <div class="display" id="myForm">
         <ol class="numberList" id="numberList"></ol>
       </div>
-    <div id="map"></div>
+
+      <div id="map"></div>
     </section>
     <script src="script.js"></script>
     <script
@@ -39,5 +43,3 @@
     ></script>
   </body>
 </html>
-
-
